@@ -1,3 +1,4 @@
+## CREATE FIRST VNET AND CLUSTER PAIR AND CONFIGURE AZURE CNI-NETWORKING 
 RESOURCE_GROUP_NAME=myResourceGroup1
 CLUSTER_NAME=myAKSCluster1
 LOCATION=westus
@@ -32,7 +33,7 @@ az aks create \
 
 
 # ---------------------------------------------------------------------------------------------------------------------
-## CREATE SECOND VNET AND CLUSTER PAIR AND CONFIGURE CNI-NETWORKING 
+## CREATE SECOND VNET AND CLUSTER PAIR AND CONFIGURE AZURE CNI-NETWORKING 
 
 RESOURCE_GROUP_NAME=myResourceGroup2
 CLUSTER_NAME=myAKSCluster2
@@ -61,6 +62,6 @@ az aks create \
     --name myAKSCluster2 \
     --network-plugin azure \
     --vnet-subnet-id <subnet-id>\
-    --dns-service-ip 10.2.0.10 \
-    --service-cidr 10.2.0.0/24 \
+    --dns-service-ip 12.2.0.10 \
+    --service-cidr 12.2.0.0/24 \
     --generate-ssh-keys
