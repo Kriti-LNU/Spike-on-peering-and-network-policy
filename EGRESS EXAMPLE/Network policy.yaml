@@ -1,0 +1,19 @@
+kind: NetworkPolicy
+apiVersion: networking.k8s.io/v1
+metadata:
+  name: allow-traffic-from-selected-pods-in-cluster2
+spec:
+  policyTypes:
+  - Egress
+  podSelector:
+    matchLabels:
+      app: backend
+  egress:
+  - to:
+    - ipBlock:
+        cidr: 10.2.3.35/32 # This is the frontend-ip of the internal load balancer of cluster 2
+    ports:
+    - protocol: TCP
+      port: 80
+
+
